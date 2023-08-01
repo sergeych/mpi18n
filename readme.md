@@ -1,5 +1,7 @@
 # Programmer-friendly KMP i18n
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Key features are
 
 - `sprintf` - like interpolation:
@@ -53,6 +55,20 @@ println("just a new string".t) //> "just a new string"
 Such orphans could be easily scanned; I'll add some tools to scan/collect missing translations.
 
 - multiplatform locale detection
+
+## Adding to your project:
+
+```kotlin
+repositories {
+    // add this
+    maven("https://maven.universablockchain.com")
+}
+
+// in dependencies add:
+implementation("net.sergeych:mpi18n:0.1-SNAPSHOT")
+```
+
+Voila ;)
 
 __Under construction.__ 
 
