@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.0"
+    kotlin("multiplatform") version "1.7.21"
     `maven-publish`
 }
 
@@ -25,16 +25,16 @@ kotlin {
     js {
         browser {
             commonWebpackConfig {
-                cssSupport {
-                    enabled.set(true)
-                }
+//                cssSupport {
+//                    enabled.set(true)
+//                }
             }
         }
     }
     val hostOs = System.getProperty("os.name")
     val isArm64 = System.getProperty("os.arch") == "aarch64"
     val isMingwX64 = hostOs.startsWith("Windows")
-    val nativeTarget = when {
+    @Suppress("UNUSED_VARIABLE") val nativeTarget = when {
         hostOs == "Mac OS X" && isArm64 -> macosArm64("native")
         hostOs == "Mac OS X" && !isArm64 -> macosX64("native")
         hostOs == "Linux" && isArm64 -> linuxArm64("native")
