@@ -2,6 +2,14 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+__Important note__. Initilaize the library _early and directly in the code_ so it wont conflict with possible static initializers in library classes. It means, call in main something like:
+
+~~~kotlin
+I18n.setup(listOf("en", "fr", "it", "ru"), "en")
+~~~
+
+If you do it in static initializer or like, be sure it will be called before any `addString` or other. 
+
 Key features are
 
 - `sprintf` - like interpolation:
@@ -65,10 +73,20 @@ repositories {
 }
 
 // in dependencies add:
-implementation("net.sergeych:mpi18n:0.1-SNAPSHOT")
+implementation("net.sergeych:mpi18n:0.2-SNAPSHOT")
 ```
 
 Voila ;)
+
+## Missing features to be added
+
+I am thinking of adding the idea of "coroutine context default locale" but yet can't understand
+how to make default string functions to check for the current context. A vairant to add async
+versions like `CharSecquence.tfa` looks clumsy and yet cryptic. And long names make it hard to use. welcome to the discussion though.
+
+## Current status
+
+Under active testing in production services. Consider it to be a beta.
 
 __Under construction.__ 
 

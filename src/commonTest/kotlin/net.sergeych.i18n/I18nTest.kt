@@ -1,6 +1,7 @@
 package net.sergeych.tools.i18n
 
-import kotlin.test.*
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class I18nTest {
 
@@ -38,6 +39,30 @@ class I18nTest {
         assertEquals("французский", "franc".t)
 
         assertEquals("формат привет", "format %s".tf("привет"))
+
+    }
+    @Test
+    fun translationTest2() {
+        I18n.addStrings(
+            listOf("en", "ru"),
+            listOf(
+                "grant_admin",
+                "grand admin rights",
+                "предоставить права администратора",
+                //
+                "set_max_storage=%s",
+                "upgrade maximum storage capacity to %s",
+                "увеличить размер хранилища до %s",
+                //
+                "increase_storage_by_%s",
+                "add %s to the storage",
+                "увеличить размер хранилища до %s",
+                //
+                "until_%s",
+                " not exceeding than %s",
+                " не превышая %s",
+            )
+        )
 
     }
 }

@@ -25,6 +25,10 @@ object I18n {
         override fun hashCode(): Int {
             return code.hashCode()
         }
+
+        @Suppress("unused")
+        fun t(str: String, vararg args: Any?) =
+            translate(this, str, *args)
     }
 
     var languages = listOf<String>()
@@ -87,13 +91,11 @@ object I18n {
         strings.chunked(indices.size + 1).forEachIndexed { i, value ->
             val args = mutableListOf<Pair<String,String>>()
             if (value.all { it == null }) throw Exception("illegal string array, all nulls at line $i")
-            for( (i, code) in langCodes.withIndex() ) {
-                value[i+1]?.let { args += code to it }
+            for( (index, code) in langCodes.withIndex() ) {
+                value[index+1]?.let { args += code to it }
             }
             addString(value[0], *args.toTypedArray())
         }
-        println("byid: Strings: $stringsById")
-        println("byct: Strings: $stringsByContent")
     }
 
     fun addString(id: String? = null, vararg variants: Pair<String, String>) {
