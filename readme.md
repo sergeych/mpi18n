@@ -1,15 +1,6 @@
-# Programmer-friendly KMP i18n
+# Programmer-friendly Kotlin MP i18n
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-__Important note__. Initilaize the library _early and directly in the code_ so it wont conflict with possible static initializers in library classes. It means, call in main something like:
-
-~~~kotlin
-I18n.setup(listOf("en", "fr", "it", "ru"), "en")
-~~~
-
-If you do it in static initializer or like, be sure it will be called before any `addString` or other. It contains
-simple tools to translate both the hardcoded string and the varying data and a simple way:
 
 ## Translating your data
 
@@ -17,6 +8,9 @@ When you need to enter and edit data in multiple languages (say to store it into
 it in the source, you have a `Multistring`:
 
 ~~~kotlin
+// initialize the library: so far you should do it first
+I18n.setup(listOf("en", "fr", "it", "ru"), "en")
+
 // encoded multistring with escaped backslashes:
 val src = """\en Hello, %s! \fr Salut \\test\\ !"""
 
@@ -118,6 +112,15 @@ repositories {
 implementation("net.sergeych:mpi18n:0.3")
 ```
 
+Initilaize it early in the code:
+
+~~~kotlin
+I18n.setup(listOf("en", "fr", "it", "ru"), "en")
+~~~
+
+If you do it in static initializer or like, be sure it will be called before any `addString` or other. It contains
+simple tools to translate both the hardcoded string and the varying data and a simple way:
+
 Voila ;)
 
 ## Missing features to be added
@@ -126,15 +129,5 @@ I am thinking of adding the idea of "coroutine context default locale" but yet c
 how to make default string functions to check for the current context. A vairant to add async
 versions like `CharSecquence.tfa` looks clumsy and yet cryptic. And long names make it hard to use. welcome to the discussion though.
 
-## Current status
-
-Under active testing in production services. Consider it to be a beta.
-
-__Under construction.__ 
-
-## Planned features
-
-- per-thread locale
-- per coroutine context locale
 
 
