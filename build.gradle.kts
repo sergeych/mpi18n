@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.9.10"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
     `maven-publish`
 }
 
@@ -24,11 +25,11 @@ kotlin {
     }
     js {
         browser {
-            commonWebpackConfig {
+//            commonWebpackConfig {
 //                cssSupport {
 //                    enabled.set(true)
 //                }
-            }
+//            }
         }
     }
     val hostOs = System.getProperty("os.name")

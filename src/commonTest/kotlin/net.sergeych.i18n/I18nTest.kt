@@ -1,5 +1,10 @@
 package net.sergeych.tools.i18n
 
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import net.sergeych.i18n.Multistring
+import net.sergeych.i18n.ms
+import net.sergeych.sprintf.sprintf
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -64,5 +69,36 @@ class I18nTest {
             )
         )
 
+    }
+
+    @Test
+    fun testMultistring() {
+        // encoded multistring with escaped backslashes:
+        val src = """\en Hello, %s! \fr Salut \\test\\ !"""
+
+        // Most obvious way to create instance:
+        val ms = Multistring.parse(src)
+
+        // Now we can extract localized strings:
+        assertEquals("Hello, %s!", ms["en"])
+        assertEquals("""Salut \test\ !""", ms["fr"])
+
+        // Assuming the fallback locale is "en" as by default, ti falls back too:
+        assertEquals("Hello, %s!", ms["ee"])
+
+        // Pseudo-constructor
+        assertEquals("""Salut \test\ !""", Multistring(src)["fr"])
+
+        // Most laconic: extension
+        assertEquals("""Salut \test\ !""", src.ms["fr"])
+
+        // kotlinx serialization uses a packed, human-friendly format too:
+        assertEquals(""""[en]= Hello, %s! [fr]= Salut \\\\test\\\\ !"""", Json.encodeToString(ms))
+
+        // format with such strings:
+        assertEquals("Hello, Frank!",
+            """\en Hello, %s! \fr Salut \\test\\ !"""
+                .ms["en"]
+                .sprintf("Frank"))
     }
 }
