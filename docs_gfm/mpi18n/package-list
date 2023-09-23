@@ -1,0 +1,43 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:net.sergeych.i18n////PointingToDeclaration/mpi18n/net.sergeych.i18n/index.md
+$dokka.location:net.sergeych.i18n//ms/kotlin.String#/PointingToDeclaration/mpi18n/net.sergeych.i18n/ms.md
+$dokka.location:net.sergeych.i18n//t/kotlin.CharSequence#/PointingToDeclaration/mpi18n/net.sergeych.i18n/t.md
+$dokka.location:net.sergeych.i18n//tf/kotlin.CharSequence#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/tf.md
+$dokka.location:net.sergeych.i18n//translate/kotlin.CharSequence#kotlin.String#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/translate.md
+$dokka.location:net.sergeych.i18n//translate/kotlin.CharSequence#net.sergeych.i18n.I18n.Locale#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/translate.md
+$dokka.location:net.sergeych.i18n/I18n.Locale///PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/index.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/Locale/#kotlin.String/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/-locale.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/code/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/code.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/equals/#kotlin.Any?/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/equals.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/hashCode/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/hash-code.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/index/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/--index--.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/t/#kotlin.String#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/t.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/toString/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/to-string.md
+$dokka.location:net.sergeych.i18n/I18n.Locale/translate/#kotlin.String#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/-locale/translate.md
+$dokka.location:net.sergeych.i18n/I18n///PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/index.md
+$dokka.location:net.sergeych.i18n/I18n/addString/#kotlin.String?#kotlin.Array[kotlin.Pair[kotlin.String,kotlin.String]]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/add-string.md
+$dokka.location:net.sergeych.i18n/I18n/addStrings/#kotlin.collections.List[kotlin.String]#kotlin.collections.List[kotlin.String?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/add-strings.md
+$dokka.location:net.sergeych.i18n/I18n/defaultLocale/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/default-locale.md
+$dokka.location:net.sergeych.i18n/I18n/fallbackLocale/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/fallback-locale.md
+$dokka.location:net.sergeych.i18n/I18n/languages/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/languages.md
+$dokka.location:net.sergeych.i18n/I18n/setup/#kotlin.collections.List[kotlin.String]#kotlin.String#kotlin.collections.List[kotlin.String?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/setup.md
+$dokka.location:net.sergeych.i18n/I18n/translate/#net.sergeych.i18n.I18n.Locale#kotlin.String#kotlin.Array[kotlin.Any?]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-i18n/translate.md
+$dokka.location:net.sergeych.i18n/Multistring.Companion///PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-companion/index.md
+$dokka.location:net.sergeych.i18n/Multistring.Companion/invoke/#kotlin.String/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-companion/invoke.md
+$dokka.location:net.sergeych.i18n/Multistring.Companion/parse/#kotlin.String#kotlin.Boolean/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-companion/parse.md
+$dokka.location:net.sergeych.i18n/Multistring.Companion/reDeinition/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-companion/re-deinition.md
+$dokka.location:net.sergeych.i18n/Multistring.ParseException///PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-parse-exception/index.md
+$dokka.location:net.sergeych.i18n/Multistring.ParseException/ParseException/#kotlin.String#kotlin.Throwable?/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-parse-exception/-parse-exception.md
+$dokka.location:net.sergeych.i18n/Multistring///PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/index.md
+$dokka.location:net.sergeych.i18n/Multistring/Multistring/#kotlin.collections.Map[kotlin.String,kotlin.String]/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/-multistring.md
+$dokka.location:net.sergeych.i18n/Multistring/default/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/default.md
+$dokka.location:net.sergeych.i18n/Multistring/encoded/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/encoded.md
+$dokka.location:net.sergeych.i18n/Multistring/get/#kotlin.String/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/get.md
+$dokka.location:net.sergeych.i18n/Multistring/values/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring/values.md
+$dokka.location:net.sergeych.i18n/MultistringSerializer///PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring-serializer/index.md
+$dokka.location:net.sergeych.i18n/MultistringSerializer/descriptor/#/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring-serializer/descriptor.md
+$dokka.location:net.sergeych.i18n/MultistringSerializer/deserialize/#kotlinx.serialization.encoding.Decoder/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring-serializer/deserialize.md
+$dokka.location:net.sergeych.i18n/MultistringSerializer/serialize/#kotlinx.serialization.encoding.Encoder#net.sergeych.i18n.Multistring/PointingToDeclaration/mpi18n/net.sergeych.i18n/-multistring-serializer/serialize.md
+net.sergeych.i18n
+

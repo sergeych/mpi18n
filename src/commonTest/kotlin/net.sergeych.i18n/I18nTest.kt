@@ -1,12 +1,11 @@
-package net.sergeych.tools.i18n
+package net.sergeych.i18n
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import net.sergeych.i18n.Multistring
-import net.sergeych.i18n.ms
 import net.sergeych.sprintf.sprintf
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 class I18nTest {
 
@@ -15,7 +14,14 @@ class I18nTest {
     }
 
     @Test
-    fun translateTest() {
+    fun defaultLocale() {
+        // locale should not be a country code but a lang code
+        // we yet do not cope with countries, not now:
+        assertNotEquals("us", I18n.defaultLocale.code)
+    }
+
+    @Test
+    fun translationTest() {
         I18n.addStrings(
             listOf("en", "ru"),
             listOf(
@@ -52,7 +58,7 @@ class I18nTest {
             listOf("en", "ru"),
             listOf(
                 "grant_admin",
-                "grand admin rights",
+                "grant admin rights",
                 "предоставить права администратора",
                 //
                 "set_max_storage=%s",
@@ -72,6 +78,18 @@ class I18nTest {
     }
 
     @Test
+    fun addNewLangTest() {
+        I18n.addStrings(
+            listOf("en", "es", "ru"),
+            listOf("wup", "wazzup?", "¿qué pasa?", "какого???")
+        )
+        assertEquals("какого???","wup".t)
+        assertEquals("wazzup?","wup".translate("en"))
+        assertEquals("¿qué pasa?",I18n.Locale("es").t("wup"))
+    }
+
+
+            @Test
     fun testMultistring() {
         // encoded multistring with escaped backslashes:
         val src = """\en Hello, %s! \fr Salut \\test\\ !"""

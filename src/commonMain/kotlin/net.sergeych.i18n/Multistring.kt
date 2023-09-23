@@ -8,7 +8,6 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import net.sergeych.i18n.Multistring.Companion.parse
-import net.sergeych.tools.i18n.I18n
 
 /**
  * Simple way to store translated things in __the data__ when you need it.
@@ -26,32 +25,9 @@ import net.sergeych.tools.i18n.I18n
  * fallback. To convert string to a multistring on the fly there is a convenience extension method
  *
  * Normally you don't use the constructor unless you already have a map, otherwise use one of the
- * convenience methods, as in this the sample:
+ * convenience methods, as in this the sample.
  *
- * ~~~kotlin
- * // encoded multistring with escaped backslashes:
- * val src = """\en Hello, %s! \fr Salut \\test\\ !"""
- *
- * // Most obvious way to create instance:
- * val ms = Multistring.parse(src)
- *
- * // Now we can extract localized strings:
- * assertEquals("Hello, %s!", ms["en"])
- * assertEquals("""Salut \test\ !""", ms["fr"])
- *
- * // Assuming the fallback locale is "en" as by default, ti falls back too:
- * assertEquals("Hello, %s!", ms["ee"])
- *
- * // Pseudo-constructor
- * assertEquals("""Salut \test\ !""", Multistring(src)["fr"])
- *
- * // Most laconic: extension
- * assertEquals("""Salut \test\ !""", src.ms["fr"])
- *
- * // kotlinx serialization uses a packed, human-friendly format too:
- * assertEquals(""""[en]= Hello, %s! [fr]= Salut \\\\test\\\\ !"""", Json.encodeToString(ms))
- * ~~~
- *
+ * @sample net.sergeych.i18n.I18nTest.testMultistring
  */
 @Serializable(with=MultistringSerializer::class)
 class Multistring(val values: Map<String, String>) {
@@ -125,6 +101,11 @@ class Multistring(val values: Map<String, String>) {
  */
 val String.ms: Multistring get() = parse(this)
 
+
+/**
+ * Multistring is serialized as human-readable/editable string for convenience.
+ * It also most often denser format than a Map.
+ */
 object MultistringSerializer : KSerializer<Multistring> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Multistring", PrimitiveKind.STRING)
 

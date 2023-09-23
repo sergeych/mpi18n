@@ -1,9 +1,8 @@
 package net.sergeych.i18n
 
 import kotlinx.browser.window
-import net.sergeych.tools.i18n.I18n
 
-actual fun detectLocale(): I18n.Locale {
+internal actual fun detectLocale(): I18n.Locale {
     fun set(code: String): I18n.Locale =
         I18n.Locale(code.split('_')[0])
 

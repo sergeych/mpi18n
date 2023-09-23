@@ -1,16 +1,32 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     kotlin("multiplatform") version "1.9.10"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
+    id("org.jetbrains.dokka") version "1.9.0"
     `maven-publish`
 }
 
 group = "net.sergeych"
-version = "0.3"
+version = "0.4-SNAPSHOT"
 
 repositories {
     mavenCentral()
     mavenLocal()
     maven("https://maven.universablockchain.com")
+}
+
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets {
+        configureEach { // Or source set name, for single-platform the default source sets are `main` and `test`
+            samples.from("$projectDir/src/commonTest/kotlin")
+            includes.from("$projectDir/readme.md")
+        }
+    }
+}
+
+tasks.dokkaGfm.configure {
+    outputDirectory.set(projectDir.resolve("docs_gfm"))
 }
 
 kotlin {
