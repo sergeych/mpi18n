@@ -103,6 +103,12 @@ Such orphans could be easily scanned; I'll add some tools to scan/collect missin
 
 - multiplatform locale detection
 
+## Online docs:
+
+Right now it is using github's markup, 
+
+- [Online docs](https://github.com/sergeych/mpi18n/blob/master/docs_gfm/mpi18n/net.sergeych.i18n/-i18n/index.md)
+
 ## Adding to your project:
 
 ```kotlin
