@@ -118,7 +118,7 @@ repositories {
 }
 
 // in dependencies add:
-implementation("net.sergeych:mpi18n:0.3")
+implementation("net.sergeych:mpi18n:0.5.1")
 ```
 
 Initilaize it somewhere in the main function (do not do it in your library modules):
