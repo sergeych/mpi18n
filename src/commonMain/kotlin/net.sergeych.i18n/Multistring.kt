@@ -52,7 +52,7 @@ class Multistring(val values: Map<String, String>) {
      * format.
      */
     val encoded: String by lazy {
-        values.map { "[${it.key}]= ${it.value.replace("\\","\\\\")}" }.joinToString(" ")
+        values.map { "\\${it.key} ${it.value.replace("\\","\\\\")}" }.joinToString(" ")
     }
 
     companion object {

@@ -80,6 +80,13 @@ object I18n {
     var defaultLocale: Locale = detectLocale()
 
     /**
+     * Same as [defaultLocale] but works with language code (like `en`, `es`, etc.)
+     */
+    var defaultLanguageCode: String
+        get() = defaultLocale.code
+        set(value) { defaultLocale = Locale(value) }
+
+    /**
      * The fallback locale is used when some translated item can't be found in the
      * desired locale. By default, it is set to system default locale detected.
      */

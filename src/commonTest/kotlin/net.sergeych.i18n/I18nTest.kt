@@ -52,6 +52,7 @@ class I18nTest {
         assertEquals("формат привет", "format %s".tf("привет"))
 
     }
+
     @Test
     fun translationTest2() {
         I18n.addStrings(
@@ -83,13 +84,13 @@ class I18nTest {
             listOf("en", "es", "ru"),
             listOf("wup", "wazzup?", "¿qué pasa?", "какого???")
         )
-        assertEquals("какого???","wup".t)
-        assertEquals("wazzup?","wup".translate("en"))
-        assertEquals("¿qué pasa?",I18n.Locale("es").t("wup"))
+        assertEquals("какого???", "wup".t)
+        assertEquals("wazzup?", "wup".translate("en"))
+        assertEquals("¿qué pasa?", I18n.Locale("es").t("wup"))
     }
 
 
-            @Test
+    @Test
     fun testMultistring() {
         // encoded multistring with escaped backslashes:
         val src = """\en Hello, %s! \fr Salut \\test\\ !"""
@@ -111,12 +112,22 @@ class I18nTest {
         assertEquals("""Salut \test\ !""", src.ms["fr"])
 
         // kotlinx serialization uses a packed, human-friendly format too:
-        assertEquals(""""[en]= Hello, %s! [fr]= Salut \\\\test\\\\ !"""", Json.encodeToString(ms))
+        assertEquals(""""\\en Hello, %s! \\fr Salut \\\\test\\\\ !"""", Json.encodeToString(ms))
 
         // format with such strings:
-        assertEquals("Hello, Frank!",
+        assertEquals(
+            "Hello, Frank!",
             """\en Hello, %s! \fr Salut \\test\\ !"""
                 .ms["en"]
-                .sprintf("Frank"))
+                .sprintf("Frank")
+        )
+
+        I18n.defaultLanguageCode = "ru"
+        val x = "Hello, world".ms
+        println(x.encoded)
+        assertEquals("\\ru Hello, world", x.encoded)
+        println(x.default)
+        assertEquals("Hello, world", x["ru"])
+        assertEquals("Hello, world", Multistring.parse(x.encoded)["ru"])
     }
 }
