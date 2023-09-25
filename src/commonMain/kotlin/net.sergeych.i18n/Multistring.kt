@@ -37,13 +37,15 @@ class Multistring(val values: Map<String, String>) {
 
     operator fun get(langCode: String): String =
         values[langCode] ?: values[I18n.defaultLocale.code] ?: values.values.first()
+    operator fun get(locale: I18n.Locale): String =
+        values[locale.code] ?: values[I18n.defaultLocale.code] ?: values.values.first()
 
 
     /**
      * String for the default locale (or fallback locale)
      */
     @Suppress("unused")
-    val default: String get() = this[I18n.defaultLocale.code]
+    val default: String get() = this[I18n.defaultLocale]
 
     /**
      * Encode to human-readable variant, suitable to [parse], see [parse] for details on the
